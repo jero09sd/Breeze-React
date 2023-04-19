@@ -3,6 +3,9 @@ import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, useForm } from '@inertiajs/react';
+import ApplicationLogo from '@/Components/ApplicationLogo';
+import { Link } from '@inertiajs/react';
+
 
 export default function ForgotPassword({ status }) {
     const { data, setData, post, processing, errors } = useForm({
@@ -19,7 +22,13 @@ export default function ForgotPassword({ status }) {
         <GuestLayout>
             <Head title="Forgot Password" />
 
-            <div className="mb-4 text-sm text-gray-600">
+            <div className="flex justify-center items-center my-10">
+                <Link href="/">
+                    <ApplicationLogo className="w-20 h-20 fill-current hover:shadow-md shadow-white text-gray-200" />
+                </Link>
+            </div>
+
+            <div className="mb-4 text-sm text-gray-300">
                 Forgot your password? No problem. Just let us know your email address and we will email you a password
                 reset link that will allow you to choose a new one.
             </div>
@@ -31,6 +40,7 @@ export default function ForgotPassword({ status }) {
                     id="email"
                     type="email"
                     name="email"
+                    placeholder="Enter your Email Here!"
                     value={data.email}
                     className="mt-1 block w-full"
                     isFocused={true}
@@ -40,7 +50,7 @@ export default function ForgotPassword({ status }) {
                 <InputError message={errors.email} className="mt-2" />
 
                 <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" disabled={processing}>
+                    <PrimaryButton className="ml-4 text-white" disabled={processing}>
                         Email Password Reset Link
                     </PrimaryButton>
                 </div>

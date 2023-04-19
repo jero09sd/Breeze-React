@@ -5,6 +5,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import ApplicationLogo from "@/Components/ApplicationLogo";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -30,6 +31,11 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
+            <div className="flex justify-center items-center my-10">
+                <Link href="/">
+                    <ApplicationLogo className="w-20 h-20 fill-current hover:shadow-md shadow-white text-gray-200" />
+                </Link>
+            </div>
             <form onSubmit={submit}>
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
@@ -102,7 +108,7 @@ export default function Register() {
                 <div className="flex items-center justify-end mt-4">
                     <Link
                         href={route('login')}
-                        className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className="underline text-sm text-gray-300 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Already registered?
                     </Link>

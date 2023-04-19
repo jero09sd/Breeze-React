@@ -135,7 +135,12 @@ export default function Authenticated({ user, header, children }) {
                             href={route("dashboard")}
                             active={route().current("dashboard")}
                         >
-                            Dashboard
+                           <h1 className="mx-4 mt-1 w-full font-extrabold font-untouched text-lg lg:text-3xl  bg-gradient-to-r from-[#2470c6] via-[#1feffe] to-white bg-clip-text text-transparent">
+                                        Triestis
+                                        <span className="text-[#1feffe]">
+                                            .
+                                        </span>
+                                    </h1>
                         </ResponsiveNavLink>
                     </div>
 
